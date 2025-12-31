@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const projects = [
   {
     title: "TEDxPVGCOET Website",
-    description: "Built responsive UI with real-time content integration for TEDx event, featuring dynamic content management and seamless user experience",
+    description: "Built responsive UI with real-time content integration for TEDx event, featuring dynamic content management and seamless user experience.",
     stack: ["React", "JavaScript", "Tailwind CSS", "Express.js"],
     github: "https://github.com/tedxpvgcoet-tech/tedxpvgcoetFrontend",
     live: "https://www.tedxpvgcoet.in/",
@@ -16,7 +16,7 @@ const projects = [
   },
   {
     title: "Blood Share",
-    description: "Ethereum-based decentralized blood donor system using Solidity smart contracts, enabling secure and transparent blood donation tracking",
+    description: "Ethereum-based decentralized blood donor system using Solidity smart contracts, enabling secure and transparent blood donation tracking.",
     stack: ["Solidity", "Ethereum", "React.js", "MongoDB"],
     github: "//github.com/CodeByAtharva/Blood-Share",
     live: "https://bloodshare.vercel.app/",
@@ -26,11 +26,11 @@ const projects = [
   {
     title: "Smart Deck",
     description: "A platform that converts any book or text into automatically generated quizzes using AI, helping students study efficiently with instant question sets.",
-    stack: ["HTML", "CSS", "JavaScript", "Gemini API"],
+    stack: ["HTML", "CSS", "JavaScript", "Gemini Api"],
     github: "https://github.com/CodeByAtharva/I7J8K_Prompt2Prototype",
     live: "https://i7-j8-k-prompt2-prototype.vercel.app/",
     thumbnail: "../img/deck.jpg",
-    color: "green"
+    color: "purple"
   },
   {
     title: "Spain Collection Clone",
@@ -39,7 +39,7 @@ const projects = [
     github: "https://github.com/CodeByAtharva/spain-collection",
     live: "https://codebyatharva.github.io/spain-collection/",
     thumbnail: "../img/spain.jpeg",
-    color: "purple"
+    color: "green"
   },
 ];
 
@@ -61,7 +61,7 @@ const getColorClasses = (color) => {
       glow: "shadow-blue-500/20",
       hover: "hover:shadow-blue-500/30"
     },
-    green: {
+    green: {  
       gradient: "from-green-500 to-emerald-500",
       bg: "bg-green-500/10",
       border: "border-green-500/30",
@@ -69,7 +69,7 @@ const getColorClasses = (color) => {
       glow: "shadow-green-500/20",
       hover: "hover:shadow-green-500/30"
     },
-    purple: {
+    purple: { 
       gradient: "from-purple-500 to-pink-500",
       bg: "bg-purple-500/10",
       border: "border-purple-500/30",
@@ -81,6 +81,7 @@ const getColorClasses = (color) => {
   return colors[color];
 };
 
+ 
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -133,28 +134,21 @@ const ProjectsSection = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="group"
+                className="group h-full"
               >
-                <div className={`bg-gray-800/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl overflow-hidden shadow-xl ${colors.hover} transition-all duration-500`}>
+                <div className={`h-full flex flex-col bg-gray-800/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl overflow-hidden shadow-xl ${colors.hover} transition-all duration-500`}>
                   {/* Project Thumbnail Section */}
                   <div className="relative h-64 overflow-hidden group/image">
                     {/* Thumbnail Image */}
                     <motion.img
                       src={project.thumbnail}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover/image:scale-110 group-hover/image:brightness-90"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover/image:scale-110"
                       whileHover={{ scale: 1.1 }}
                     />
-
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-50 group-hover:opacity-30 transition-opacity duration-500" />
-
-                    {/* Hover Gradient Overlay */}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-25 transition-opacity duration-500`}
-                    />
+                    
+                    {/* Gradient Overlay - Only from bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 transition-opacity duration-500" />
 
                     {/* Corner Accent */}
                     <div className="absolute top-4 right-4 z-10">
@@ -180,15 +174,15 @@ const ProjectsSection = () => {
                     </motion.div>
                   </div>
 
-                  {/* Project Content */}
-                  <div className="p-6">
+                  {/* Project Content - flex-1 makes it fill remaining space */}
+                  <div className="p-6 flex flex-col flex-1">
                     {/* Title */}
                     <h3 className="font-display text-2xl font-bold mb-3 text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                       {project.title}
                     </h3>
 
-                    {/* Description */}
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                    {/* Description - flex-1 pushes buttons to bottom */}
+                    <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
                       {project.description}
                     </p>
 
@@ -215,7 +209,7 @@ const ProjectsSection = () => {
                         className="flex-1 rounded-xl border-gray-600 hover:border-gray-500 hover:bg-gray-700/50 transition-all duration-300"
                         asChild
                       >
-                        <a href={project.github} className="flex items-center justify-center gap-2">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                           <Github className="w-4 h-4" />
                           <span className="font-semibold">GitHub</span>
                         </a>
@@ -225,16 +219,13 @@ const ProjectsSection = () => {
                         className={`flex-1 rounded-xl bg-gradient-to-r ${colors.gradient} hover:opacity-90 text-white font-semibold shadow-lg ${colors.glow} transition-all duration-300`}
                         asChild
                       >
-                        <a href={project.live} className="flex items-center justify-center gap-2">
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                           <ExternalLink className="w-4 h-4" />
                           <span>Live Demo</span>
                         </a>
                       </Button>
                     </div>
                   </div>
-
-                  {/* Subtle Hover Glow */}
-                  <div className={`absolute inset-0 ${colors.bg} opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none rounded-2xl`} />
                 </div>
               </motion.div>
             );
