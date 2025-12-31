@@ -34,7 +34,7 @@ const experiences = [
   {
     title: "Android Development Internship",
     company: "Internship",
-    location: "Remote",
+    location: "Sangali, Maharashtra",
     period: "Jan 2023 – Jul 2023",
     description: "Built mobile applications and learned Android development fundamentals, working with Java and modern Android SDK features",
     current: false,

@@ -61,18 +61,7 @@ const Navbar = () => {
         } rounded-full px-6 py-3`}
       >
         <div className="flex items-center gap-8">
-          {/* Logo */}
-          <motion.a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("#home");
-            }}
-            className="font-display font-bold text-xl gradient-text"
-            whileHover={{ scale: 1.05 }}
-          >
-            AK
-          </motion.a>
+      
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">

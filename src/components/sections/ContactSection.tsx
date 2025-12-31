@@ -22,9 +22,9 @@ const ContactSection = () => {
   const contacts = [
     { icon: Mail, label: "codebyatharva21@gmail.com", href: "mailto:codebyatharva21@gmail.com" },
     { icon: Phone, label: "9552851437", href: "tel:+919552851437" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-    { icon: Github, label: "GitHub", href: "https://github.com" },
-    { icon: ExternalLink, label: "Codolio", href: "#" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/atharva-kamble-10685928b/" },
+    { icon: Github, label: "GitHub", href: "https://github.com/CodeByAtharva/" },
+    { icon: ExternalLink, label: "Codolio", href: "https://codolio.com/profile/Atharva_09" },
   ];
 
   return (

@@ -110,7 +110,7 @@ const HeroSection = () => {
               <motion.a
                 whileHover={{ scale: 1.15, y: -3 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://github.com"
+                href="https://github.com/CodeByAtharva"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-300 shadow-lg"
@@ -120,7 +120,7 @@ const HeroSection = () => {
               <motion.a
                 whileHover={{ scale: 1.15, y: -3 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/atharva-kamble-10685928b"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-300 shadow-lg"

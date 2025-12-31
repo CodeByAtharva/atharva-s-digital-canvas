@@ -83,7 +83,7 @@ const AboutSection = () => {
 
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
-                  I am a <span className="text-blue-400 font-semibold">BTech Computer Science student</span> and 
+                  I am a <span className="text-blue-400 font-semibold">B.E. Computer Science student</span> and 
                   a <span className="text-purple-400 font-semibold">full stack MERN developer</span> with a passion for 
                   creating modern, scalable web applications that solve real-world problems.
                 </p>
@@ -151,9 +151,9 @@ const AboutSection = () => {
                       </div>
                     </div>
                     <p className="text-sm text-gray-400 mb-3">Academic Journey</p>
-                    <h5 className="font-semibold text-gray-200 mb-2">B.Tech – Computer Engineering</h5>
+                    <h5 className="font-semibold text-gray-200 mb-2">B.E. – Computer Engineering</h5>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                      Pune Vidyarthi Griha's College of Engineering
+                      PVG College of Engineering and Technology, Pune
                     </p>
                   </div>
                 </div>
