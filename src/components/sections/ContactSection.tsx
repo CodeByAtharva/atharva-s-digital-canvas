@@ -23,41 +23,55 @@ const ContactSection = () => {
     setSubmitStatus(null);
 
     try {
-      // Initialize EmailJS if not already done
+      // Initialize EmailJS
       const emailjs = (await import('@emailjs/browser')).default;
       
       // EmailJS Configuration
       const SERVICE_ID = 'service_k2cx589';
-      const TEMPLATE_ID = 'template_k7cn81m';
+      const TEMPLATE_ID = 'template_774mdee';
       const PUBLIC_KEY = '9IMGar6SZXgcJntgo';
       
       // Get current time in a readable format
       const currentTime = new Date().toLocaleString('en-US', {
+        weekday: 'short',
         month: 'short',
         day: 'numeric',
         year: 'numeric',
         hour: '2-digit',
-        minute: '2-digit'
+        minute: '2-digit',
+        hour12: true
       });
       
-      // Send email using EmailJS with template variables matching your template
-      await emailjs.send(
+      // Prepare template parameters - matching your template exactly
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        time: currentTime,
+      };
+      
+      console.log('Sending email with params:', templateParams);
+      
+      // Send email using EmailJS
+      const response = await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          time: currentTime,
-        },
+        templateParams,
         PUBLIC_KEY
       );
+      
+      console.log('Email sent successfully:', response);
 
       setSubmitStatus('success');
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setSubmitStatus(null), 5000);
     } catch (error) {
       console.error('Email send error:', error);
+      console.error('Error details:', {
+        status: error.status,
+        text: error.text,
+        message: error.message
+      });
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
